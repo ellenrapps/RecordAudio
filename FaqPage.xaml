@@ -1,0 +1,180 @@
+﻿<Page
+    x:Class="audiorec1222012.FaqPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:audiorec1222012"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible">
+        <Grid Background="White" BorderBrush="DarkSeaGreen"  BorderThickness="5" SizeChanged="ErAppSizeChanged">
+
+            <SplitView Name="MySplitView" 
+                   IsPaneOpen="False" 
+                   DisplayMode="CompactOverlay" 
+                   CompactPaneLength="65" 
+                   OpenPaneLength="150" 
+                   Visibility="Visible">
+
+                <SplitView.Pane>
+                    <StackPanel Name="MyStackPanelMain" Background="DarkSeaGreen" Margin="0,0,0,0">
+                        <StackPanel Name="MyStackPanelHamburger" Orientation="Horizontal" Margin="0,25,0,0">
+                            <Button Name="HamburgerButton2" 
+                                FontFamily="Segoe MDL2 Assets" 
+                                Content="&#xE700;"                                
+                                Background="{x:Null}" 
+                                FontSize="30"
+                                Click="ButtonClick2" />
+                        </StackPanel>
+
+                        <StackPanel Name="MyStackPanelHome" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="Home">
+                            <Button Name="HomeButton"
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xE80F;"
+                                         Click="ButtonClick2"
+                                         Background="{x:Null}" />
+                            <TextBlock Text="Home" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0" TextWrapping="WrapWholeWords"/>
+
+                        </StackPanel>
+
+                    </StackPanel>
+                </SplitView.Pane>
+
+                <SplitView.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Viewbox StretchDirection="Both" Grid.Row="0">
+                            <TextBlock
+                            TextWrapping="Wrap"
+                            Width="500"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" >
+                                
+                <LineBreak/>
+                <Bold>RecordAudio App Frequently Asked Questions (FAQ)</Bold>
+                <LineBreak/> 
+                <LineBreak/>
+                                
+                <Bold>Warning:</Bold> Be sure to complete the audio recording process before visiting the Frequently Asked Questions (FAQ) page as visiting this page will disable all recording functions, including Record, Pause, Resume, Stop and Save.
+                <LineBreak/> 
+                <LineBreak/>    
+                
+                <Bold>What is RecordAudio app? </Bold> <LineBreak/>
+                RecordAudio allows you to record high-quality audio. This app also works as an audio player. Bonus feature: You can cast your audio recording to an external speaker via Bluetooth.
+                <LineBreak/> 
+                <LineBreak/>
+                
+                <Bold>AUDIO RECORDER</Bold><LineBreak/>
+                <Bold>How to record audio?</Bold> <LineBreak/>
+                Here are the steps to record audio: <LineBreak/>
+                1. Click the "Record" button. <LineBreak/>                
+                2. After clicking the Record button, you can pause the recording by clicking the "Pause" button. <LineBreak/>
+                3. If you want to resume the recording, click the "Resume" button. <LineBreak/>
+                4. If you want to stop and save the recording, click the "Stop and Save" button. The Stop and Save button completes the audio recording process.
+                <LineBreak/> 
+                <LineBreak/>
+            
+                <Bold>How to record again?</Bold> <LineBreak/>
+                You can record again by clicking the “Record Again” button.
+                <LineBreak/>
+                <LineBreak/>
+                
+                <Bold>What is the maximum recording hours?</Bold> <LineBreak/>
+                The maximum recording hours is 3 hours.
+                <LineBreak/>
+                <LineBreak/>
+                
+                <Bold>How to find out the status of the audio recording process?</Bold> <LineBreak/>
+                The current status of the audio recording process is prominently shown on the app’s mainframe.
+                <LineBreak/>
+                <LineBreak/>
+            
+                <Bold>Where's my audio recording?</Bold><LineBreak/>
+                Your audio is saved inside the "Music" folder. To find the Music folder, go to “File Explorer”, and then go to “This PC”. The Music folder is located inside “This PC”. 
+                <LineBreak/>
+                <LineBreak/>
+            
+                <Bold>What is the default audio recording quality?</Bold> <LineBreak/>
+                The default audio recording quality is the highest audio quality that your computer is capable of. Audio quality, in general, depends on other factors such as your microphone quality, set volume, etc.
+                <LineBreak/>
+                <LineBreak/>
+            
+                <Bold>What is the default audio recording format?</Bold> <LineBreak/>
+                The default audio recording format is MP3.
+                <LineBreak/>
+                <LineBreak/>
+                                
+                <Bold>Can I resize the audio app window?</Bold> <LineBreak/> 
+                Yes, you can.
+                <LineBreak/>
+                <LineBreak/>
+                
+                <Bold>What are the audio recorder’s known issues?</Bold> <LineBreak/>                
+                This app won’t launch when these two conditions are present: <LineBreak/>
+                1. Computer’s microphone is disabled; and <LineBreak/>
+                2. Microphone is used by another app and this app hasn’t be given permission to access the computer’s microphone.
+                <LineBreak/>
+                <LineBreak/>
+                Recommended solutions:  <LineBreak/>
+                1. Enable your computer’s microphone. <LineBreak/>
+                2. Give this app permission to access the computer’s microphone.<LineBreak/>
+                3. Click on the “Record Again” button.
+                <LineBreak/>
+                <LineBreak/>
+                                
+                <Bold>AUDIO PLAYER</Bold>  <LineBreak/>                              
+                <Bold>How to play my audio recording?</Bold> <LineBreak/>
+                To play your audio recording, click on the “Play Audio Page" button. Inside this page, click on the "Open Audio File" button and then choose an audio file that you want to play. 
+                <LineBreak/>
+                <LineBreak/>
+                You can play the most recent audio recording or past audio recording, and even other MP3 or WMA files not recorded by this app.
+                <LineBreak/>
+                <LineBreak/>    
+                                
+                <Bold>What are the known issues when casting this app with an external speaker?</Bold> <LineBreak/>
+                This app won’t cast to an external speaker via Bluetooth when these two conditions are present:<LineBreak/>
+                1. Computer’s Bluetooth is turned off, and <LineBreak/>
+                2. External speaker’s Bluetooth is turned off.<LineBreak/>
+                Recommended solutions: 
+                <LineBreak/>
+                <LineBreak/>
+                1. Turn on the computer’s Bluetooth.<LineBreak/>
+                2. Turn on the external speaker’s Bluetooth.
+                <LineBreak/>
+                <LineBreak/>
+                
+                <Bold>What's the general advice when something goes wrong?</Bold> <LineBreak/>
+                Clicking the "Record Again" button solves most issues. Turning off and turning on this app also solve many issues.
+                <LineBreak/>
+                <LineBreak/>
+
+                <Bold>Does this app access, collect, or transmit personal information (data that could be used to identify a person)?</Bold> <LineBreak/>
+                This app respects your privacy. It doesn’t access, collect, or transmit personal information (data that could be used to identify a person).
+                <LineBreak/>
+                <LineBreak/>
+            
+                <Bold>How can I contact the developer if I have questions not answered here?</Bold> <LineBreak/>
+                Email me at support@ellenrapps.com
+                <LineBreak/>
+                <LineBreak/>
+
+                            </TextBlock>
+
+                        </Viewbox>
+                    </Grid>
+                </SplitView.Content>
+
+
+            </SplitView>
+
+
+        </Grid>
+    </ScrollViewer>
+
+</Page>
