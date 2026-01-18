@@ -1,0 +1,152 @@
+﻿<Page
+    x:Class="audiorec1222012.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:audiorec1222012"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="White" BorderBrush="DarkSeaGreen"  BorderThickness="40" SizeChanged="ErAppSizeChanged">
+
+        <SplitView Name="MySplitView" 
+                   IsPaneOpen="False" 
+                   DisplayMode="CompactOverlay" 
+                   CompactPaneLength="85" 
+                   OpenPaneLength="350" 
+                   Visibility="Visible">
+
+            <SplitView.Pane>
+                <StackPanel Name="MyStackPanelMain" Background="DarkSeaGreen" Margin="0,0,0,0">
+                    <StackPanel Name="MyStackPanelHamburger" Orientation="Horizontal" Margin="0,0,0,0">
+                        <Button Name="HamburgerButton1" 
+                                FontFamily="Segoe MDL2 Assets" 
+                                Content="&#xE700;"                                
+                                Background="{x:Null}" 
+                                FontSize="30"
+                                Click="ButtonClick" />
+                    </StackPanel>
+
+                    <StackPanel Name="MyStackPanelFaq" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="FAQ">
+                        <Button Name="FaqButton"
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xE82F;"
+                                         Click="ButtonClick"
+                                         Background="{x:Null}" />
+                        <TextBlock Text="Frequently Asked Questions (FAQ)" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0" TextWrapping="WrapWholeWords"/>
+
+                    </StackPanel>
+
+                    <StackPanel Name="MyStackPanelRecordAudio" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="Record">
+                        <Button Name="RecordButton" 
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xE7C8;" 
+                                         Background="{x:Null}"
+                                         Click="ButtonClick"
+                                         ClickMode="Press" />
+
+                        <TextBlock Text="Record" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Name="MyStackPanelPauseRecord" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="Pause">
+                        <Button Name="PauseButton" 
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xE769;"
+                                         Background="{x:Null}"
+                                         Click="ButtonClick"
+                                         ClickMode="Press" />
+                        <TextBlock Text="Pause" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Name="MyStackPanelResumeRecord" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="Resume">
+                        <Button Name="ResumeButton" 
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xEC13;" 
+                                         Background="{x:Null}"
+                                         Click="ButtonClick"
+                                         ClickMode="Press" />
+                        <TextBlock Text="Resume" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Name="MyStackPanelStopRecord" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="Stop and Save">
+                        <Button Name="StopButton" 
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xE71A;" 
+                                         Background="{x:Null}"
+                                         Click="ButtonClick"
+                                         ClickMode="Press" />
+
+                        <TextBlock Text="Stop and Save" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Name="MyStackPanelRefresh" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="Record Again">
+                        <Button Name="RefreshButton"
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xE72C;"
+                                         Click="ButtonClick"
+                                         Background="{x:Null}" />
+                        <TextBlock Name="TxtStatus" Text="Record Again" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0" TextWrapping="WrapWholeWords"/>
+
+                    </StackPanel>
+
+                    <StackPanel Name="MyStackPanelStopPlayAudioPage" Orientation="Horizontal" Margin="0,5,0,0" ToolTipService.ToolTip="Play Audio Page">
+                        <Button Name="PlayAudioPageButton" 
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="35" Content="&#xF5B0;" 
+                                         Background="{x:Null}"
+                                         Click="ButtonClick"
+                                         ClickMode="Press" />
+
+                        <TextBlock Text="Play Audio Page" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0" />
+                    </StackPanel>
+
+                    
+
+                </StackPanel>
+            </SplitView.Pane>
+
+            <SplitView.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <Viewbox StretchDirection="Both" Grid.Row="0">
+                        <TextBlock 
+                            Name="Status"
+                            Margin="25,25,25,25"
+                            Foreground="IndianRed"
+                            TextWrapping="Wrap"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" >
+                        </TextBlock>
+                    </Viewbox>
+
+                    <Viewbox StretchDirection="Both" Grid.Row="1">
+                        <Image Source="300recordaudio.png"
+                               Margin="20,20,20,20"/>
+                    </Viewbox>
+
+                    <Viewbox StretchDirection="Both" Grid.Row="2">
+                        <TextBlock 
+                            Name="Duration" 
+                            Text="{Binding}"
+                            Margin="30,30,30,30"
+                            Foreground="IndianRed"
+                            TextWrapping="Wrap"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" ></TextBlock>
+                    </Viewbox>
+                </Grid>
+            </SplitView.Content>
+
+        </SplitView>
+
+
+    </Grid>
+
+</Page>
+
